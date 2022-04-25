@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { todosState } from "../recoil/todos/atom";
+import { createTodo } from "../utils";
 
 function InputForm() {
   const [input, setInput] = useState("");
@@ -8,7 +9,7 @@ function InputForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setTodos([...todos, input]);
+    setTodos([...todos, createTodo(input)]);
     setInput("");
   }
 
@@ -16,7 +17,7 @@ function InputForm() {
     <form onSubmit={handleSubmit}>
       <input
         value={input}
-        onChange={({ target: { value } }) => setInput(value)}
+        onChange={({ target }) => setInput(target.value)}
         type="text"
       />
       <button>Add</button>
