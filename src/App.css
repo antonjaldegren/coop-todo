@@ -55,15 +55,24 @@ form button {
 	width: 100%;
 	max-width: 40ch;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.todo.completed {
+	opacity: 0.6;
+	background-color: rgb(245, 245, 245);
 }
 
 .todo .title {
 	text-align: center;
+	flex: 1;
 }
 
 .todo.completed .title {
 	text-decoration: line-through;
 	text-decoration-skip-ink: none;
-	text-decoration-thickness: 0.2em;
-	text-decoration-color: rgba(0, 0, 0, 0.75);
+	text-decoration-thickness: 0.1em;
+	text-decoration-color: black;
 }
