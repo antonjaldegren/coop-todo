@@ -4,19 +4,15 @@ import { todosState } from "../recoil/todos/atom";
 import Todo from "./Todo";
 
 function TodoList() {
-  const todos = useRecoilValue(todosState);
+	const todos = useRecoilValue(todosState);
 
-  return (
-    <>
-      {todos.map((todo) => {
-        return (
-        <Todo todo={todo} key={todo.id} />
-        )
-      })}
-    </>
-  );
+	return (
+		<>
+			{todos.map((todo) => {
+				return <Todo todo={todo} key={todo.id} />;
+			})}
+		</>
+	);
 }
 
 export default TodoList;
-
-r;
